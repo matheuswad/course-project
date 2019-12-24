@@ -1,0 +1,10 @@
+extends layouts/main-layout.pug
+
+block content
+    main
+        h2#hero Welcome to the Course Project
+        if prods.length > 0
+            each product in prods
+                h4 #{product}
+        else
+            h1 No products to display
