@@ -2,8 +2,6 @@ extends layouts/main-layout.pug
 
 block content
     main
-        form#addProductForm(onsubmit='sendForm(event)')
+        form#addProductForm(action='/add-product' method='POST')
             input(type='text', name='product', placeholder='product name', required)
             button(type='submit') Add
-    script(src="https://unpkg.com/axios/dist/axios.min.js")
-    script(src='sendForm.js')
