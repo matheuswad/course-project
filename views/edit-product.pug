@@ -1,0 +1,16 @@
+extends layouts/main-layout.pug
+
+block content
+    main
+        h2#hero Edit a product
+        if prods.length > 0
+           each product in prods
+                h4 #{product.name}
+                a(href=(`/viewproduct/${product.id}`)) 
+                    button(type='button') Details
+                a(href=`/edit/${product.id}`)
+                    button(type='button') Edit
+                form(class='inline-form' method='POST' action=`/delete/${product.id}`)
+                    button(type='submit') Delete
+        else
+            h1 No products to display

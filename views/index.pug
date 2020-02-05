@@ -5,6 +5,9 @@ block content
         h2#hero Welcome to the Course Project
         if prods.length > 0
             each product in prods
-                h4 #{product}
+                a(href=`viewproduct/${product.id}`): h4 #{product.name}
+                form(method='post' action=`/add-cart/${product.id}`).inline-form
+                    button(type='submit') Add to cart
+                
         else
             h1 No products to display

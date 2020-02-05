@@ -3,5 +3,5 @@ extends layouts/main-layout.pug
 block content
     main
         form#addProductForm(action='/add-product' method='POST')
-            input(type='text', name='product', placeholder='product name', required)
-            button(type='submit') Add
+            input(type='text', name='name', placeholder='product name', required)
+            button(class='form-button' type='submit') Add

@@ -1,0 +1,9 @@
+extends layouts/main-layout.pug
+
+block content
+    if (prod)
+        form(action=`/edit/${prod.id}` method='POST')#editForm
+            input(type="text" name='name' placeholder='New product name' value=(prod.name) required)
+            button(class='form-button' type='submit') Update
+    else
+        h3(style='text-align: center;margin-top: 2rem') Product not found
